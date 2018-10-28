@@ -33,6 +33,7 @@ class ContainerMain extends StatelessWidget{
       body: Material(
         borderRadius: BorderRadius.circular(50.0),
         child:Container(
+          color:Colors.green[100],
           child:listCategory(),
         ),
       ),
@@ -48,10 +49,10 @@ class listCategory extends StatelessWidget{
       padding: EdgeInsets.all(5.0),
       child: ListView(
         children: <Widget>[
+          Category('Length',"assets/icons/length.png"),
           Category('Area',"assets/icons/area.png"),
           Category('Currency',"assets/icons/currency.png"),
           Category('Digital Storage',"assets/icons/digital_storage.png"),
-          Category('Length',"assets/icons/length.png"),
           Category('Mass',"assets/icons/mass.png"),
           Category('Power',"assets/icons/power.png"),
           Category('Time',"assets/icons/time.png"),

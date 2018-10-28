@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:udacity_converter/Converter_Layout.dart';
 
-var _categoryName='Cake';
-var _categoryIcon='';
+//var _categoryName='Cake';
+//var _categoryIcon='';
 const _categoryColor=Colors.green;
 const _largo=100.0;
 const _radio=50.0;
@@ -27,8 +28,12 @@ class constructorImagen extends StatelessWidget{
 
 class Category extends StatelessWidget{
 
+  var _colorAppBar;
+  var _colorTextos;
+  var _titulo;
   var _categoryName='Cake';
   var _categoryIcon='';
+  Widget layoutConverter;
 
   Category(var n,var i){
     _categoryName=n;
@@ -52,7 +57,50 @@ class Category extends StatelessWidget{
             ),),
         ],
       ),
-      //onTap: (){print('Presionado');},
+      onTap:(){
+        switch(_categoryName){
+          case "Area":{
+            _colorAppBar=Colors.orange[200];
+            break;
+          }
+          case "Currency":{
+            _colorAppBar=Colors.teal[200];
+            break;
+          }
+          case "Digital Storage":{
+            _colorAppBar=Colors.red[200];
+            break;
+          }
+          case "Lenght":{
+            _colorAppBar=Colors.yellow[200];
+            break;
+          }
+          case "Mass":{
+            _colorAppBar=Colors.indigo[200];
+            break;
+          }
+          case "Power":{
+            _colorAppBar=Colors.purple[200];
+            break;
+          }
+          case "Time":{
+            _colorAppBar=Colors.brown[200];
+            break;
+          }
+          case "Volume":{
+            _colorAppBar=Colors.lime[200];
+            break;
+          }
+          default:{
+            _colorAppBar=Colors.pink[200];
+            break;
+          }
+        }
+        layoutConverter=new ConverterLayout(_colorAppBar,Colors.blueGrey,_categoryName);
+        Navigator.push(context, MaterialPageRoute(
+          builder:(context)=>layoutConverter,
+        ));
+      },
     );
   }
 }
